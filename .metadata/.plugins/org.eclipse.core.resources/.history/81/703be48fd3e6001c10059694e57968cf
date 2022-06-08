@@ -1,0 +1,20 @@
+package com.test02;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Mtest {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext factory = new ClassPathXmlApplicationContext("beans.xml");
+		
+		MessageBean bean = (MessageBean)factory.getBean("korean");
+		bean.sayHello("½ºÇÁ¸µ");
+		
+		//english
+		MessageBean bean1 = (MessageBean)factory.getBean("English");
+		bean1.sayHello("spring");
+	}
+
+}
