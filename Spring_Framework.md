@@ -37,7 +37,7 @@
 | :----------------------------------------------: | ------------------------------------------------------------ |
 |          __Bean Factory <br>빈 팩토리__          | \- 스프링의 IOC를 담당하는 핵심 컨테이너 <br>- Bean을 등록, 생성, 조회, 반환하는 기능을 담당 |
 | __ApplicationContext<br> 애플리케이션 컨텍스트__ | \- BeanFactory를 확장한 IoC 컨테이너 <br>- Bean을 등록하고 관리하는 기능은 BeanFactory와 동일하지만<br> 스프링이 제공하는 각종 부가 서비스를 추가로 제공함 |
-|        __GenericXmlApplication Context__         | \- ApplicationContext 를 구현한 Class <br>- 일반적인 XML 형태의 문서를 읽어 컨테이너 역할을 수행 |
+|        __ClassPathXmlApplicationContext__        | \- ApplicationContext 를 구현한 Class <br>- 일반적인 XML 형태의 문서를 읽어 컨테이너 역할을 수행 |
 |  __Configuration metadata <br>설정 메타 정보__   | \- ApplicationContext 또는 BeanFactory가 IOC를 적용하기<br> 위해 사용하는 설정 정보 <br>- 설정 메타 정보는 IOC 컨테이너에 의해 관리되는 Bean <br>객체를 생성하고 구성할 때 사용 |
 
 ---
