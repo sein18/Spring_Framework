@@ -21,7 +21,7 @@ public class Mtest {
 		
 		MessageBean bean = (MessageBean)factory.getBean("korean");
 		//MessageBean bean = (MessageBeanKo)factory.getBean("korean");
-		bean.sayHello("½ºÇÁ¸µ");
+		bean.sayHello("ìŠ¤í”„ë§");
 		
 		//english
 		bean = (MessageBean)factory.getBean("English");

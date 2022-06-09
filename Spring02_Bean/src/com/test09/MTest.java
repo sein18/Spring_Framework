@@ -7,7 +7,7 @@ public class MTest {
 
 	public static void main(String[] args) {
 		ApplicationContext factory = new ClassPathXmlApplicationContext("com/test09/applicationContext.xml");
-		System.out.println("spring bean container »ý¼º ¿Ï·á");
+		System.out.println("spring bean container ì‹¤í–‰ í›„");
 		TV tv = (TV)factory.getBean("samsung");
 		TV tv1 = (TV)factory.getBean("lg");
 

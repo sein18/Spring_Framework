@@ -3,7 +3,7 @@ package com.test09;
 public class LgTV implements TV{
 	
 	public LgTV() {
-		System.out.println("lg tv °´Ã¼ »ı¼º");
+		System.out.println("lg tv ê°ì²´ ìƒì„±");
 	}
 	 
 	@Override
