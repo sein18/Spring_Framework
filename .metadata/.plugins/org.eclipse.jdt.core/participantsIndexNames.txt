@@ -3,3 +3,5 @@ C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2047
 \qq\src\main\java
 C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1983277027.index
 \qqq\src\main\java
+C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2480493978.index
+\Spring07_HelloMVC\src

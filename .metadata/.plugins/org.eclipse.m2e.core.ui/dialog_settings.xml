@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Spring07_HelloMVC"/>
+			<item value="Spring06_TestAop"/>
+			<item value="Spring05_AOP"/>
 			<item value="practice"/>
 			<item value="Spring04_Anno"/>
 			<item value="Spring03"/>
@@ -12,6 +15,9 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Spring07_HelloMVC"/>
+			<item value="Spring06_TestAop"/>
+			<item value="Spring05_AOP"/>
 			<item value="practice"/>
 			<item value="Spring04_Anno"/>
 			<item value="Spring03"/>
