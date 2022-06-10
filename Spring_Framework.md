@@ -127,12 +127,85 @@
 
 
 1.@Component : 클래스에 선언, 지동으로 bean등록, bean의 이름은 해당 클래스명이 사용된다.(첫글자 소문자)
+
 2.@Autowired : 의존관계 자동 설정, 생성자 필드 메소드 적용가능
+
 3.@Qualifier : autowired에서 동일 타입 빈객체가 2개 이상 존재 할 시 특정반을 사용하도록 선언
 		@Autowired
 		@Qualifier("test")
+
 4.@Required : 필수 프로퍼티임을 명시, setter에 붙인다.
+
 5.@Repository
+
 7.@Service
+
 6.@Resource : 어플리케이션에서 필요로 하는 자원을 자동연결
+
+---
+
+# Spring AOP
+
+* __Spring AOP 란?__
+
+  * Spring AOP 란, 관점 지향 프로그래밍(Aspect Oriented Programming)의 약자로 일반적으로 사용하는 클래스(Service, Dao 등) 에서 <u>중복되는 공통 코드 부분(commit, rollback, log 처리)</u> 을 별도의 영역으로 분리해 내고, 코드가 실행 되기 전이나 이 후의 시점에 해당 코드를 붙여 넣음으로써 <u>소스 코드의 중복을 줄이고, 필요할 때마다 가져다 쓸 수 있게 객체화하는 기술</u>을 말한다.
+  * 공통되는 부분을 따로 빼내어 작성하는 클래스를 **`Advice`**라고 이야기 하며,  Advice를 실행하는 시점을 **`Joinpoint`**,  그리고 그 시점에 공통 코드를 끼워 넣는 작업을 **`Weaving`** 이라고 말한다.
+
+* __Aspect 란 ?__( <u>Adive + PointCut = Aspect</u> )
+
+  * Aspect는 부가기능을 정의한 코드인 어드바이스(Advice)와 어드바이스를 어디에 적용하는지를 결정하는 포인트컷(PointCut)을 합친 개념이다.
+  * AOP 개념을 적용하면 핵심기능 코드 사이에 끼어있는 부가기능을 독립적인 요소로 구분해 낼 수 있고, 이렇게 구분된 부가기능 Aspet는 런타임 시에 필요한 위치에 동적으로 참여하게 할 수 있다.
+
+  ---
+
+* __Spring AOP 특징 및 구현 방식__
+
+  * **Spring은 프록시(Proxy) 기반 AOP를 지원한다.**
+
+    * Spring은 <u>대상 객체(Target Object)에 대한 프록시를 만들어 제공</u>하며,  타겟을 감싸는 프록시는 서버 Runtime 시에 생성된다.  이렇게 생성된 프록시는 대상 객체를 호출 할 때 먼저 호출되어 어드바이스의 로직을 처리 후 대상 객체를 호출한다
+
+  * **Proxy는 대상 객체의 호출을 가로챈다 (Intercept)**
+
+    * Proxy는 그 역할에 따라 대상 객체에 대한 호출을 가로챈 다음,  Advice의 부가기능 로직을 수행하고 난 후에 타겟의 핵심기능 로직을 호출하거나 타겟의 핵심기능 로직 메소드를 호출 한 후에 Advice의 부가기능을 수행한다. 
+
+    
+
+  *  **XML 기반의 aop 네임스페이스를 통한 AOP 구현**
+
+    1. 부가기능을 제공하는 Advice 클래스를 작성한다. 
+    2. XML 설정 파일에 < aop:config >를 이용해서 Aspect를 설정한다.  (즉, 어드바이스와 포인트컷을 설정)
+
+  * **@Aspect 어노테이션 기반의 AOP 구현**
+
+    1. @Aspect 어노테이션을 이용해서 부가기능을 제공하는 Aspect 클래스를 작성한다.<br> (이 때, Aspect 클래스는 어드바이스를 구현하는 메소드와 포인트컷을 포함한다.) 
+
+    2. XML 설정 파일에 < aop:aspect-autuproxy />를 설정한다.
+
+       
+
+    
+
+* **Spring AOP 구현 방식 - XML**
+
+  * `< aop:before >` : 메소드 실행 전에 적용되는 어드바이스를 정의
+  * `< aop:around >` : 메소드 호출 이전, 이후 예외 발생 등 모든 시점에 적용 가능한 어드바이스를 정의
+  * `< aop:after >` : 메소드가 정상적으로 실행되는지 또는 예외를 발생시키는지 여부에 상관없는 어드바이스를 정의
+  * `< aop:after-returning >` : 메소드가 정상적으로 실행된 후에 적용되는 어드바이스를 정의
+  * `< aop:after-throwing >` : 메소드가 예외를 발생시킬 때 적용되는 어드바이스를 정의 <br>(try-catch 블록에서 catch 블록과 유사)
+
+* **Spring AOP 구현 방식 - Annotation**
+
+  * `@Before(“pointcut”)` : 타겟 객체의 메소드가 실행 되기 전에 호출되는 어드바이스 
+
+    ​											JoinPoint를 통해 파라미터 정보를 참조할 수 있다.
+
+  * `@Around (“pointcut”)  `: 타겟 객체의 메소드 호출 전과 후에 실행 될 코드를 구현할 어드바이스
+
+  * `@After(“pointcut”)` : 타겟 객체의 메소드가 정상 종료 됐을 때와 예외가 발생했을 때 모두 호출되는 어드바이스로, 반환 값을 받을 수 없다.
+
+  * `@AfterReturning( Pointcut=“”, Returning=“”)` : 타겟 객체의 메소드가 정상적으로 실행을 마친 후에 호출되는 어드바이스 , 리턴 값을 참조할 때는 returning 속성에 리턴 값을 저장할 변수 이름을 지정해야 된다.
+
+  * `@AfterThrowing( Pointcut=“”, throwing=“”)` : 타겟 객체의 메소드에서 예외가 발생하면 호출되는 어드바이스, 발생된 예외를 참조할 때는 throwing 속성에 발생한 예외를 저장할 변수 이름을 지정해야 한다.
+
+
 
