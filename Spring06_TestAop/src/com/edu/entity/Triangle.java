@@ -2,7 +2,7 @@ package com.edu.entity;
 
 import org.springframework.stereotype.Component;
 
-@Component("tri")
+@Component
 public class Triangle extends Shape{
  
 	public Triangle() {

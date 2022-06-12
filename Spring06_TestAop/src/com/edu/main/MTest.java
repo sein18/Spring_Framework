@@ -15,6 +15,7 @@ public class MTest {
 	
 		rect.viewSize();
 		System.out.println("==========");
+		tri.viewSize();
 	}
 	
 
