@@ -1,8 +1,6 @@
 package com.edu.entity;
 
-import org.springframework.stereotype.Component;
-
-@Component
+ 
 public class Rectangle extends Shape{
 	public Rectangle() {
 		super();
