@@ -1,0 +1,14 @@
+-- springmvc02
+drop table myboard;
+
+create table MYBOARD(
+	MYNO INT auto_increment primary key,
+	MYNAME VARCHAR(100) not null,
+	MYTITLE VARCHAR(2000) not null,
+	MYCONTENT VARCHAR(4000) not null,
+	MYDATE DATE not null
+)
+
+insert into MYBOARD VALUES(null,'관리자','스프링 테스트','SPRING MVC 어렵다...',NOW());
+
+select  * FROM MYBOARD order by MYNO desc;
