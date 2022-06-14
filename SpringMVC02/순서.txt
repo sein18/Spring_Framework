@@ -6,4 +6,4 @@ SpringMVC02
 5. src/main/resources/mybatis/board-mapper.xml
 6. src/main/resources/mybatis/bd.properties
 7. /WEB-INF/spring/sql/config.xml
-8. applicationContext,xml, servlet-context.xml
+8. applicationContext.xml, servlet-context.xml

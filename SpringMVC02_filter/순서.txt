@@ -1,0 +1,13 @@
+SpringMVC02
+1. pom.xml : mysql, mybatis, mybatis-spring, commons-dbcp, spring-orm 
+2. web.xml : applicationContext.xml, mapping,  filter
+3. /WEB-INF/spring/sql/test_db.xt
+4. dto, dao, service, controller
+5. src/main/resources/mybatis/board-mapper.xml
+6. src/main/resources/mybatis/bd.properties
+7. /WEB-INF/spring/sql/config.xml
+8. applicationContext.xml, servlet-context.xml
+
+_filter
+9. com/mvc/upgrade/common/filter/LogFilter(impl javax.servlet.Filter)
+10. web.xml 필터추가
