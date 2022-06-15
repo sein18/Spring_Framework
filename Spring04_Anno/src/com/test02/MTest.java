@@ -8,7 +8,7 @@ public class MTest {
 	public static void main(String[] args) {
 		ApplicationContext factory = new ClassPathXmlApplicationContext("com/test02/applicationContext.xml");
 		
-		School lee = factory.getBean("mySchool",School.class);
+		School lee = factory.getBean("school",School.class);
 		
 		System.out.println(lee);
 	}

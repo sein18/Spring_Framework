@@ -7,7 +7,7 @@
   
   <select id="login" parameterType="memberDto" resultType="memberDto">
   SELECT *
-  FROM MEMBER
+  FROM MYMEMBER
   WHERE MEMBERID = #{memberid} 
   and MEMBERPW = #{memberpw}
   </select>

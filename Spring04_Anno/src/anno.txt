@@ -27,3 +27,5 @@ Spring 에서 Annotation을 사용하려면 다음과 같은 설정 필요
 5.@Repository
 7.@Service
 6.@Resource : 어플리케이션에서 필요로 하는 자원을 자동연결
+
+

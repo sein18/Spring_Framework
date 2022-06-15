@@ -1,5 +1,8 @@
 package com.test02;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
 	private String name;
 	private String addr;
