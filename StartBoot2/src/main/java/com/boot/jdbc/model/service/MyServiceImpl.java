@@ -29,13 +29,13 @@ public class MyServiceImpl implements MyService{
 	}
 
 	@Override
-	public int upgrade(MyDto dto) {
+	public int update(MyDto dto) {
 		return myBoardMapper.update(dto);
 	}
 
 	@Override
 	public int delete(int myno) {
-		return 0;
+		return myBoardMapper.delete(myno);
 	}
 
 }

@@ -22,9 +22,9 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="right">
-			<input type="button" value="목룍" onclick="location.href='list'">
-			<input type="button" value="수정" onclick="location.href='updateform?myno=${dto.myno}'">  
-			<input type="button" value="삭제" onclick="location.href='delete?myno=${dto.myno}'">  
+			<input type="button" value="목룍" onclick="location.href='/myboard/list'">
+			<input type="button" value="수정" onclick="location.href='/myboard/updateform?myno=${dto.myno}'"> 
+			<input type="button" value="삭제" onclick="location.href='/myboard/delete?myno=${dto.myno}'"> 
 		</td>
 	</tr>
 </table>

@@ -8,6 +8,6 @@ public interface MyService {
 	public List<MyDto> selectList();
 	public MyDto selectOne(int myno);
 	public int insert(MyDto dto);
-	public int upgrade(MyDto dto);
+	public int update(MyDto dto);
 	public int delete(int myno);
 }

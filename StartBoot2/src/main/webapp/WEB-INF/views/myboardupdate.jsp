@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="update" method="post">
+	<form action="/myboard/update" method="post">
 		<input type="hidden" name="myno" value="${dto.myno }">
 		<table border="1">
 			<tr>
@@ -25,7 +25,7 @@
 			<tr>
 				<td colspan="2"  align="right">
 				<input type="submit" value="완료">
-				<input type="button" value="취소" onclick="location.href='list'">
+				<input type="button" value="취소" onclick="location.href='/myboard/list'">
 				</td>
 			</tr>
 		</table>

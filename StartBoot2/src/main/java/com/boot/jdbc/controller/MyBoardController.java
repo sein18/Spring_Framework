@@ -37,32 +37,47 @@ public class MyBoardController {
 		return "myboarddetail";
 	}
 	@GetMapping("/insertform")
-	public String insertform() {
+	public String insertForm() {
 		return "myboardinsert";
 	}
 	@PostMapping("/insert") 
 	public String insert(MyDto dto) {
 		System.out.println(dto);
-		int res = myService.insert(dto);
-		if(res>0) {
-			return "redirect:list";
+		if(myService.insert(dto)>0) {
+			return "redirect:/myboard/list";
 		}else {
 			return "myboardinsert";
 		}
 	}
 	@GetMapping("/updateform")
-	public String updateform(Model model, int myno) {
+	public String updateForm(Model model, int myno) {
 		model.addAttribute("dto",myService.selectOne(myno)); 
 		return "myboardupdate";
 	}
 	@PostMapping("/update")
 	public String update(MyDto dto) {
 		System.out.println(dto);
-		int res = myService.upgrade(dto);
-		if(res>0) {
-			return "redirect:detail?myno="+dto.getMyno();
+		if(myService.update(dto)>0) {
+			return "redirect:/myboard/detail?myno="+dto.getMyno();
 		}else {
-			return "redirect:updateform?myno="+dto.getMyno();
+			return "redirect:/myboard/updateform?myno="+dto.getMyno();
 		}
 	}
+	@GetMapping("/delete")
+	public String delete(int myno) {
+		if(myService.delete(myno)>0) {
+			return "redirect:/myboard/list";			
+		}else {
+			return "redirect:/myboard/detail?myno="+myno;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
