@@ -27,6 +27,8 @@ C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2153
 \SpringMVC02_filter_aop\src\main\java
 C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1460690708.index
 \SpringMVC03_file\src\main\java
+C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3117473032.index
+\test\src\main\java
 C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3799312736.index
 \SpringMVC02\src\main\java
 C:\workspace\6_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2815444261.index

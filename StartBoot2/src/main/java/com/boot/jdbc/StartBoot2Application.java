@@ -10,9 +10,5 @@ public class StartBoot2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(StartBoot2Application.class, args);
 	}
-	@RequestMapping("/")
-	public String root() {
-		
-	return "index";
-	}
+	 
 }
